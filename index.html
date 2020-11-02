@@ -39,7 +39,18 @@
     //         this.data.target.setAttribute("position", intersection.point);
     //     }
     // });
-    
+        // Create a new asset
+        // var new_asset = document.createElement('video');
+        // new_asset.setAttribute('id', 'video-id'); // Create a unique id for asset
+        // new_asset.setAttribute('src', 'https://cors-anywhere.herokuapp.com/https://www.youtube.com/watch?v=hoNb6HuNmU0');
+
+        // // Append the new video to the a-assets, where a-assets id="assets-id"
+        // document.getElementById('assets-id').appendChild(new_asset);
+
+        // // Add the asset to the a-video
+        // screen.setAttribute('src', '#video-id');
+        // // Start playback
+        // new_asset.play();
     </script>    
 
     <!-- <script>
@@ -51,14 +62,44 @@
         });
     </script> -->
     <!-- Prevent touch causing flicker on iOS. -->
+    <script>
+    AFRAME.registerComponent('foo',{
+        init:function(){
+          var vid = document.getElementById('video');
+          setTimeout(function(){
+        
+          document.querySelector('#video').pause();
+          console.log('pause');
+          },5000);
+          setTimeout(function(){
+           vid.play();
+           console.log('play');
+          },10000);
+        }
+        })
+        </script>
+
     <style> * { -webkit-tap-highlight-color: rgba(0,0,0,0); } </style>        
 </head>
 
 <body>
-    <a-scene>
+    <!-- <a-scene>
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
-        <a-video src="https://cors-anywhere.herokuapp.com/https://www.youtube.com/watch?v=nrawit53W7s" autoplay webkit-playsinline></a-video>
-    
+        <a-assets id="assets-id"></a-assets>
+        <a-video id="video-id" src="https://cors-anywhere.herokuapp.com/https://www.youtube.com/watch?v=hoNb6HuNmU0" autoplay webkit-playsinline></a-video>
+        
+    </a-scene> -->
+    <a-scene foo>
+        <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
+        <a-assets>
+          <video id="video" src="sample-mp4-file.mp4"
+                 autoplay loop crossorigin="anonymous"></video>
+        </a-assets>
+      
+        <!-- <a-videosphere src="#video" rotation="0 90 0"></a-videosphere> -->
+        <!-- <a-entity geometry="primitive: box" material="src: #video"></a-entity> -->
+        <a-plane src="#video" rotation="-90 45 45"></a-plane>
+        <!-- <a-entity geometry="primitive: plane; height: 10; width: 10" material="side: double; src: #video" visible="true"></a-entity> -->
     </a-scene>
     
     <!-- <a-scene ar raycaster-move="target:#intersection">
