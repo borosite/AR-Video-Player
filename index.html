@@ -66,10 +66,11 @@
       smoothTolerance=".01"
       smoothThreshold="5"
     >
-      <a-entity>
-        <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double"></a-plane>
+      <a-entity geometry="primitive: plane" material="side: double; src: #video">
+
       </a-entity>
     </a-nft>
+    <!-- <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double"></a-plane> -->
     <a-entity camera></a-entity>
   </a-scene>
 </body>
