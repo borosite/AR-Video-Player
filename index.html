@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@e47f441/dist/aframe-master.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script>
     
     // AFRAME no longer sends intersection event every time intersection changes position;
@@ -89,7 +90,10 @@
         <a-video id="video-id" src="https://cors-anywhere.herokuapp.com/https://www.youtube.com/watch?v=hoNb6HuNmU0" autoplay webkit-playsinline></a-video>
         
     </a-scene> -->
-    <a-scene foo>
+    <a-scene vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
         <a-assets>
           <video id="video" src="sample-mp4-file.mp4"

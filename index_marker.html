@@ -1,0 +1,76 @@
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
+<script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+
+<script>
+    AFRAME.registerComponent('foo',{
+        init:function(){
+          var vid = document.getElementById('video');
+          setTimeout(function(){
+        
+          document.querySelector('#video').pause();
+          console.log('pause');
+          },5000);
+          setTimeout(function(){
+           vid.play();
+           console.log('play');
+          },10000);
+        }
+        })
+</script>
+
+<style>
+  .arjs-loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arjs-loader div {
+    text-align: center;
+    font-size: 1.25em;
+    color: white;
+  }
+</style>
+
+<body style="margin : 0px; overflow: hidden;">
+  <!-- minimal loader shown until image descriptors are loaded -->
+  <!-- <div class="arjs-loader">
+    <div>Loading, please wait...</div>
+  </div> -->
+  <a-scene
+    vr-mode-ui="enabled: false;"
+    renderer="logarithmicDepthBuffer: true;"
+    embedded
+    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+  >
+    <a-assets>
+        <video id="video" src="sample-mp4-file.mp4"
+            autoplay loop crossorigin="anonymous"></video>
+    </a-assets>
+    <!-- we use cors proxy to avoid cross-origin problems -->
+    <a-nft
+      type="nft"
+      url="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/trex-image/trex"
+      smooth="true"
+      smoothCount="10"
+      smoothTolerance=".01"
+      smoothThreshold="5"
+    >
+      <a-entity geometry="primitive: plane" material="side: double; src: #video">
+
+      </a-entity>
+    </a-nft>
+    <!-- <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double"></a-plane> -->
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
