@@ -9,8 +9,8 @@ AFRAME.registerComponent('play-on-window-click', {
       window.removeEventListener('click', this.onClick);
     },
     onClick: function (evt) {
-      var video = this.el.components.material.material.map.image;
+      var video = document.getElementById('video');
       if (!video) { return; }
-      video.play();
+      video.paused ? video.play() : video.pause();
     }
   });
