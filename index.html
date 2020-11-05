@@ -12,6 +12,22 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
 
     <script src="scripts.js"></script>
+    <script>
+        AFRAME.registerComponent('foo',{
+                init:function(){
+                var vid = document.getElementById('video');
+                setTimeout(function(){                
+                    document.querySelector('#video').pause();
+                    console.log('pause');
+                },5000);
+                setTimeout(function(){
+                    vid.play();
+                    console.log('play');
+                },10000);
+                }
+            }
+        )
+    </script>
 
     <style> * { -webkit-tap-highlight-color: rgba(0,0,0,0); } </style>        
 </head>
