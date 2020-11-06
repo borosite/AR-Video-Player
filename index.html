@@ -34,7 +34,9 @@
 </head>
 
 <body>
-    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
+
+    <button onclick="myFunction(video)">Click me</button>
+    <a-scene vr-mode-ui="enabled: false;" height="90vh" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
 
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
         <a-assets>
