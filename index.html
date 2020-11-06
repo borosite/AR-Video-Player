@@ -34,6 +34,18 @@
 </head>
 
 <body>
+    <header>
+        <details open>
+          <summary>Stereo Video Player</summary>
+          <p>
+            This sample demonstrates how to play a stereo 3D video.
+            <a class="back" href="./">Back</a>
+            <br/>
+            <hr/>
+            Autoplay when VR starts: <input id='autoplayVideo' type='checkbox'/>
+          </p>
+        </summary>
+      </header>
     <a-scene vr-mode-ui="enabled: false;" height="90vh" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
 
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
