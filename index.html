@@ -51,11 +51,11 @@
           <video id="video" src="sample-mp4.mp4" controls="true" autoplay="" loop="" crossorigin="anonymous" webkit-playsinline playsinline></video>
         </a-assets>
       
-        <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double" play-on-window-click></a-plane>
+        <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double"></a-plane>
         <!-- <a-entity video-controls="src:#video"></a-entity> -->
     </a-scene>
-    <header style="margin-top: -10%;">
-        <img src="play.png" style="margin-left: 50%; margin-top: 0%;" onclick="togglePlay()">
+    <header style="margin-top: -10%; position: relative; z-index: 9999;">
+        <img src="play.png" style="margin-left: 50%; margin-top: 0%;" play-on-window-click>
         <!-- <button style="margin-left: 50%; margin-top: 0%;" onclick="togglePlay()">play</button> -->
     </header>
     <!-- <button onclick="myFunction(video)">Click me</button> -->
