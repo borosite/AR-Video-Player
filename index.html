@@ -34,8 +34,6 @@
 </head>
 
 <body>
-
-    <button onclick="myFunction(video)">Click me</button>
     <a-scene vr-mode-ui="enabled: false;" height="90vh" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
 
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
@@ -46,6 +44,7 @@
         <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double" play-on-window-click></a-plane>
         <a-entity video-controls="src:#video"></a-entity>
     </a-scene>
+    <button onclick="myFunction(video)">Click me</button>
 </body>
 
 </html>
