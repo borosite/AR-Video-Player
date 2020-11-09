@@ -10,9 +10,9 @@
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <script src="./node_modules/webrtc-adapter/out/adapter.js"></script>
+    <!-- <script src="./node_modules/webrtc-adapter/out/adapter.js"></script> -->
     <script src="scripts.js"></script>
-    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
+    <!-- <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script> -->
     <script>
         AFRAME.registerComponent('foo',{
                 init:function(){
@@ -41,7 +41,7 @@
           <video id="video" src="sample-mp4.mp4" controls="true" autoplay="" loop="" crossorigin="anonymous" webkit-playsinline playsinline play-on-window-click></video>
         </a-assets>
       
-        <a-plane src="#video"  position="0 2 -2" rotation="0 0 0" material="side: double" play-on-window-click></a-plane>
+        <a-plane src="#video"  position="0 2 -3" rotation="0 0 0" material="side: double" play-on-window-click></a-plane>
         <!-- <a-entity video-controls="src:#video"></a-entity> -->
     </a-scene>
     <header style="margin-top: -10%; position: relative; z-index: 9999;">
