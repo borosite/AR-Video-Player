@@ -33,6 +33,16 @@
         )
         window.addEventListener('camera-init', (data) => {
             document.querySelector("#loader").remove();
+            var playButton = document.createElement('header');
+            playButton.id = "playButton";
+            playButton.classList.add('playButton');
+            document.body.appendChild(playButton);
+            var playImage = document.createElement('img');
+            playImage.id = "playImage";
+            playImage.src = "play.png";
+            playImage.classList.add('playImage');
+            document.querySelector('#playButton').appendChild(playImage);
+
             console.log('camera-init', data);
         })
     </script>
@@ -40,18 +50,30 @@
     <style> 
         * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
 
+        .playButton {
+            margin-top: -10%;
+            position: relative;
+            z-index: 9999;
+        }
+
+        .playImage {
+            margin-left: 50%; margin-top: 0%;
+        }
         .arjs-loader {
             height: 100%;
             width: 100%;
             position: absolute;
             top: 0;
             left: 0;
-            /* background-color: rgba(0, 0, 0, 0.8); */
-            background-color: #cc0b3a;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* background-color: #cc0b3a; */
             z-index: 9999;
             display: flex;
+            display: -webkit-flex;
             justify-content: center;
+            -webkit-justify-content: center;
             align-items: center;
+            -webkit-align-items: center;
         }
 
         .arjs-loader div {
@@ -59,13 +81,77 @@
             font-size: 1.25em;
             color: white;
         }
+
+    .spinner {
+  margin: auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: white;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+  20% { -webkit-transform: scaleY(1.0) }
+}
+
+@keyframes sk-stretchdelay {
+  0%, 40%, 100% { 
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }  20% { 
+    transform: scaleY(1.0);
+    -webkit-transform: scaleY(1.0);
+  }
+}
     </style>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <div class="arjs-loader" id="loader">
-        <!-- <div id="loader-message">Loading awesomeness.. Please wait...</div> -->
-        <img src="Impossible triangle.gif" />
+        <div>
+        <div id="loader-message">Loading awesomeness.. Please wait...</div>
+        <!-- <div class="loading">
+          </div> -->
+          <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <!-- <div class="rect5"></div> -->
+          </div>
+        <!-- <img src="Rolling-1s-200px (1).gif" /> -->
+        </div>
     </div>
     <a-scene vr-mode-ui="enabled: false;" height="90vh" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
 
@@ -77,9 +163,9 @@
         <a-plane src="#video"  position="0 2 -20" rotation="0 0 0" material="side: double" height="8" width="12" play-on-window-click></a-plane>
         <!-- <a-entity video-controls="src:#video"></a-entity> -->
     </a-scene>
-    <header style="margin-top: -10%; position: relative; z-index: 9999;">
+    <!-- <header id="playButton" style="margin-top: -10%; position: relative; z-index: 9999;">
         <img src="play.png" style="margin-left: 50%; margin-top: 0%;" play-on-window-click>
-    </header>
+    </header> -->
 </body>
 
 </html>
