@@ -11,6 +11,16 @@ AFRAME.registerComponent('play-on-window-click', {
     onClick: function (evt) {
       var video = document.getElementById('video');
       if (!video) { return; }
-      video.paused ? video.play() : video.pause();
+      if(video.paused) {
+        var image = document.getElementById('playImage');
+        video.play();
+        image.src = "pause.png";
+      }
+      else {
+        var image = document.getElementById('playImage');
+        video.pause();
+        image.src = "play.png";
+      }
+      // video.paused ? video.play() : video.pause();
     }
   });
