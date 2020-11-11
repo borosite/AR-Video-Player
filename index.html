@@ -3,17 +3,18 @@
 
 <head>
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="Cache-Control" content="no-store" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Set-Cookie" content="name=data; path=/; expires=">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>WebAR Video</title>
-    <!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@e47f441/dist/aframe-master.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    <!-- <script src="./node_modules/webrtc-adapter/out/adapter.js"></script> -->
     <script src="scripts.js"></script>
-    <!-- <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script> -->
     <script>
         AFRAME.registerComponent('foo',{
                 init:function(){
@@ -26,9 +27,6 @@
                         vid.play();
                         console.log('play');
                     },1000);
-                    // this.el.addEventListener('model-loaded', e => {
-                    //     document.querySelector("#loader-message").remove();
-                    // })
                 }
             }
         )
@@ -70,7 +68,6 @@
             top: 0;
             left: 0;
             background-color: rgba(0, 0, 0, 0.8);
-            /* background-color: #cc0b3a; */
             z-index: 9999;
             display: flex;
             display: -webkit-flex;
@@ -185,8 +182,6 @@
     <div class="arjs-loader" id="loader">
         <div>
         <div id="loader-message">Loading awesomeness.. Please wait...</div>
-        <!-- <div class="loading">
-          </div> -->
           <div class="spinner">
             <div class="rect1"></div>
             <div class="rect2"></div>
@@ -199,7 +194,6 @@
             <div class="arrow-line"></div>
             <div class="arrow-line2"></div>
         </div>
-        <!-- <img src="Rolling-1s-200px (1).gif" /> -->
         </div>
     </div>
     <a-scene vr-mode-ui="enabled: false;" height="90vh" renderer="logarithmicDepthBuffer: true;" embedded arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;" foo>
@@ -210,7 +204,6 @@
         </a-assets>
       
         <a-plane src="#video"  position="0 2 -20" rotation="0 0 0" material="side: double" height="8" width="12" play-on-window-click></a-plane>
-        <!-- <a-entity video-controls="src:#video"></a-entity> -->
     </a-scene>
     <!-- <header id="playButton" style="margin-top: -10%; position: relative; z-index: 9999;">
         <img src="play.png" style="margin-left: 50%; margin-top: 0%;" play-on-window-click>
