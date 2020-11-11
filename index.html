@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
+    <!-- Set-Cookie: <cookie-name>=sample; Expires="0" -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta http-equiv="Cache-Control" content="no-store" />
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Set-Cookie" content="name=data; path=/; expires=">
+    <!-- <meta http-equiv="Set-Cookie" content="name=data; path=/; expires="> -->
+    <meta http-equiv="expires" content="-1">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <title>WebAR Video</title>
@@ -16,6 +18,7 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="scripts.js"></script>
     <script>
+        document.cookie = "name=sampleCookie";
         AFRAME.registerComponent('foo',{
                 init:function(){
                     var vid = document.getElementById('video');
