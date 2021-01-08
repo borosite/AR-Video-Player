@@ -17,7 +17,6 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script src="scripts.js"></script>
     <script>
-        // document.cookie = "name=sampleCookie";
         AFRAME.registerComponent('foo',{
                 init:function(){
                     var vid = document.getElementById('video');
@@ -60,7 +59,6 @@
             }
         }
         eraseCookieFromAllPaths("__cfduid");
-        eraseCookieFromAllPaths("name");
     </script>
     
     <style> 
@@ -198,13 +196,12 @@
 <body style="overflow-x: hidden;">
     <div class="arjs-loader" id="loader">
         <div>
-        <div id="loader-message">Loading awesomeness.. Please wait...</div>
+            <div id="loader-message">Loading awesomeness.. Please wait...</div>
             <div class="spinner">
                 <div class="rect1"></div>
                 <div class="rect2"></div>
                 <div class="rect3"></div>
                 <div class="rect4"></div>
-            <!-- <div class="rect5"></div> -->
             </div>
             <div id="message">Raise the device to your eye-level</div>
             <div class="arrow-container">
@@ -220,7 +217,7 @@
 
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
         <a-assets>
-          <video id="video" src="SG XImpact.mp4" autoplay="" controls="true" loop="" crossorigin="anonymous" webkit-playsinline playsinline play-on-window-click></video>
+            <video id="video" src="SG XImpact.mp4" autoplay="" controls="true" loop="" crossorigin="anonymous" webkit-playsinline playsinline play-on-window-click></video>
         </a-assets>
       
         <a-plane src="#video"  position="0 2 -30" rotation="0 0 0" material="side: double" height="8" width="15" play-on-window-click></a-plane>
