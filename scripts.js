@@ -14,12 +14,12 @@ AFRAME.registerComponent('play-on-window-click', {
       if(video.paused) {
         var image = document.getElementById('playImage');
         video.play();
-        image.src = "pause1.png";
+        image.src = "pause.png";
       }
       else {
         var image = document.getElementById('playImage');
         video.pause();
-        image.src = "play1.png";
+        image.src = "play.png";
       }
       // video.paused ? video.play() : video.pause();
     }

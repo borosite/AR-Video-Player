@@ -10,7 +10,7 @@
     <meta http-equiv="Expires" content="0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>AVRLY</title>
+    <title>AFRAME</title>
     <script src="https://cdn.jsdelivr.net/gh/aframevr/aframe@e47f441/dist/aframe-master.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.0/dist/aframe-extras.min.js"></script>
     <script src="https://ghcdn.rawgit.org/chenzlabs/aframe-ar/8a7ee3b/dist/aframe-ar.min.js"></script>
@@ -22,11 +22,9 @@
                     var vid = document.getElementById('video');
                     setTimeout(function(){                
                         document.querySelector('#video').pause();
-                        console.log('pause');
                     },1000);
                     setTimeout(function(){
                         vid.play();
-                        console.log('play');
                     },1000);
                 }
             }
@@ -39,11 +37,9 @@
             document.body.appendChild(playButton);
             var playImage = document.createElement('img');
             playImage.id = "playImage";
-            playImage.src = "play1.png";
+            playImage.src = "play.png";
             playImage.classList.add('playImage');
             document.querySelector('#playButton').appendChild(playImage);
-
-            console.log('camera-init', data);
         })
         function eraseCookieFromAllPaths(name) {
             // This function will attempt to remove a cookie from all paths.
@@ -212,7 +208,7 @@
                 <div class="arrow-line2"></div>
             </div>
             <p>
-                <strong style="color: coral;">POWERED BY AVRLY</strong>
+                <strong style="color: coral;">POWERED BY AFRAME</strong>
             </p>
         </div>
     </div>
@@ -220,7 +216,7 @@
 
         <a-camera user-height="0" cursor="fuse:false" ar-raycaster raycaster="objects:none"></a-camera>
         <a-assets>
-            <video id="video" src="compressed.m4v" autoplay="" controls="true" loop="" crossorigin="anonymous" webkit-playsinline playsinline play-on-window-click></video>
+            <video id="video" src="sample.m4v" autoplay="" controls="true" loop="" crossorigin="anonymous" webkit-playsinline playsinline play-on-window-click></video>
         </a-assets>
         <a-plane position="0 2 -35" rotation="0 0 0" material="side: double" height="12" width="20" color="grey" metalness="1"></a-plane>
         <a-plane src="#video"  position="0 2 -30" rotation="0 0 0" material="side: double" height="8" width="15" play-on-window-click></a-plane>
